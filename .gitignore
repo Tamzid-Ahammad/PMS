@@ -1,0 +1,12 @@
+/Api/bin
+/Api/obj
+/Core/bin
+/Core/obj
+/Data/bin
+/Data/obj
+# Editor directories and files
+.vscode
+.vs/
+.vs/PMS/DesignTimeBuild/.dtbcache.v2
+*.suo
+*.njsproj

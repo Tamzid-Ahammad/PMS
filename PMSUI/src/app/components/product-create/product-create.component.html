@@ -1,0 +1,44 @@
+<div class="product-create" style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
+    <h2 style="text-align: center;">Create Product</h2>
+    <form [formGroup]="productForm" (ngSubmit)="submit()">
+        <div style="margin-bottom: 15px;">
+            <label for="name">Name</label>
+            <input id="name" formControlName="name" type="text" class="form-control" style="width: 100%;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="type">Type</label>
+            <input id="type" formControlName="type" type="text" class="form-control" style="width: 100%;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="brandId">Brand</label>
+            <select id="brandId" formControlName="brandId" class="form-control" style="width: 100%;">
+                <option *ngFor="let brand of brands" [value]="brand.id">{{ brand.name }}</option>
+            </select>
+        </div>
+        <div formArrayName="variants">
+            <div *ngFor="let variant of variants.controls; let i=index" [formGroupName]="i" style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+                <div style="margin-bottom: 15px;">
+                    <label for="color">Color</label>
+                    <input id="color" formControlName="color" type="text" class="form-control" style="width: 100%;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="specification">Specification</label>
+                    <input id="specification" formControlName="specification" type="text" class="form-control" style="width: 100%;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="size">Size</label>
+                    <input id="size" formControlName="size" type="text" class="form-control" style="width: 100%;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="price">Price</label>
+                    <input id="price" formControlName="price" type="number" class="form-control" style="width: 100%;">
+                </div>
+                <button type="button" (click)="removeVariant(i)" class="btn btn-danger" style="width: 100%;">Remove Variant</button>
+            </div>
+        </div>
+        <button type="button" (click)="addVariant()" class="btn btn-primary" style="width: 100%;">Add Variant</button>
+        <button type="submit" class="btn btn-success" style="width: 100%;">Submit</button>
+    </form>
+</div>
+
+

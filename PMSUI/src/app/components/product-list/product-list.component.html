@@ -1,0 +1,24 @@
+<div class="product-list" style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
+    <h2 style="text-align: center;">Products</h2>
+    <button routerLink="/products/create" class="btn btn-primary" style="margin-bottom: 10px;">Create New Product</button>
+    <ul>
+        <li *ngFor="let product of products" style="border: 1px solid #eee; padding: 10px; margin-bottom: 10px;">
+            <h3>{{ product.name }}</h3>
+            <p>Type: {{ product.type }}</p>
+            <p>Brand: {{ product.brand.name }}</p>
+            <p>Variants:</p>
+            <ul>
+                <li *ngFor="let variant of product.variants">
+                    <p>Color: {{ variant.color }}</p>
+                    <p>Specification: {{ variant.specification }}</p>
+                    <p>Size: {{ variant.size }}</p>
+                    <p>Price: {{ variant.price }}</p>
+                </li>
+            </ul>
+            <div style="margin-top: 10px;">
+                <button (click)="deleteProduct(product.id)" class="btn btn-danger">Delete</button>
+                <button [routerLink]="['/products/edit', product.id]" class="btn btn-warning" style="margin-left: 10px;">Edit</button>
+            </div>
+        </li>
+    </ul>
+</div>

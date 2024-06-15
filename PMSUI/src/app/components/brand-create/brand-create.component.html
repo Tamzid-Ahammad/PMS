@@ -1,0 +1,21 @@
+<div class="brand-create">
+    <h2 style="text-align: center;">Create Brand</h2>
+    <form [formGroup]="brandForm" (ngSubmit)="submit()">
+        <div style="margin-bottom: 10px;">
+            <label for="name">Brand Name</label>
+            <input id="name" formControlName="name" type="text" style="width: 100%; padding: 8px; font-size: 16px;">
+        </div>
+        <button type="submit" style="background-color: #4CAF50; /* Green */
+                                     border: none;
+                                     color: white;
+                                     padding: 10px 20px;
+                                     text-align: center;
+                                     text-decoration: none;
+                                     display: inline-block;
+                                     font-size: 16px;
+                                     margin-top: 10px;
+                                     cursor: pointer;">
+            Submit
+        </button>
+    </form>
+</div>
