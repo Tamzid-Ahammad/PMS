@@ -25,3 +25,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+Because of Limited time I can't complete frontend properly beside when doing authentication with JWT I starteld some places and I solve those problem by using various resources like stackoverflow or microsoft learning or from youtube.
