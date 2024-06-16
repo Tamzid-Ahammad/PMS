@@ -1,0 +1,29 @@
+<div *ngIf="order">
+    <h2>Order Details</h2>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Order ID: {{ order.id }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p><strong>Recipient Name:</strong> {{ order.recipientName }}</p>
+            <p><strong>Email:</strong> {{ order.email }}</p>
+            <p><strong>Phone:</strong> {{ order.phone }}</p>
+            <p><strong>Address:</strong> {{ order.address }}</p>
+            <p><strong>User ID:</strong> {{ order.userId }}</p>
+            <h3>Order Items</h3>
+            <table mat-table [dataSource]="order.orderItems" class="mat-elevation-z8">
+                <ng-container matColumnDef="variantId">
+                    <th mat-header-cell *matHeaderCellDef>Variant ID</th>
+                    <td mat-cell *matCellDef="let item">{{ item.variantId }}</td>
+                </ng-container>
+                <ng-container matColumnDef="quantity">
+                    <th mat-header-cell *matHeaderCellDef>Quantity</th>
+                    <td mat-cell *matCellDef="let item">{{ item.quantity }}</td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="['variantId', 'quantity']"></tr>
+                <tr mat-row *matRowDef="let row; columns: ['variantId', 'quantity'];"></tr>
+            </table>
+        </mat-card-content>
+    </mat-card>
+</div>
+

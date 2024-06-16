@@ -1,6 +1,9 @@
 <div class="product-list" style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
     <h2 style="text-align: center;">Products</h2>
     <button routerLink="/products/create" class="btn btn-primary" style="margin-bottom: 10px;">Create New Product</button>
+    <button mat-raised-button color="primary" (click)="navigateToOrder()" style="float: right;">
+        Order List
+    </button>
     <ul>
         <li *ngFor="let product of products" style="border: 1px solid #eee; padding: 10px; margin-bottom: 10px;">
             <h3>{{ product.name }}</h3>
